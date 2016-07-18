@@ -17,10 +17,13 @@
 	<br/>
 	<button style="width: 800px">
 	  Mission: Tutorial #1: Gather 100 clicks
-	  <progress style="" value="22" max="100">
+	  <progress id="mission1progress" style="" value="0" max="100">
 	  </progress>
 	</button>
-	<script>document.getElementById("click-balance").innerHTML=clickBalance;</script>
+	<script>
+	  document.getElementById("click-balance").innerHTML=clickBalance;
+	  updateMissionStatus();
+	  </script>
   </body>
 </html>
 
