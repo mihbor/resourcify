@@ -6,31 +6,40 @@ if(localStorage["honourBalance"]) honourBalance = parseInt(localStorage["honourB
 
 function clicked() {
    clickBalance+=1;
-   localStorage["clickBalance"] = clickBalance;
-   updateBalance();
+   save();
    updateMissionStatus();
 }
 
 function updateBalance(){
-	var clickBalanceElement = document.getElementById("click-balance");
-	clickBalanceElement.innerHTML = clickBalance;
+	document.getElementById("click-balance").innerHTML = clickBalance;
+	document.getElementById("honour-balance").innerHTML=honourBalance;
 }
+
 function updateMissionStatus() {
-	if(honourBalance==0){
-	  var mission1progressElement = document.getElementById("mission1progress");
-	  mission1progressElement.value = clickBalance;
-	  if(clickBalance>=100){
-		 honourBalance+=1;
-		 mission1progressElement.style="display:none";
-		 document.getElementById("honour-balanceRow").style="";
-	  }
-	  var honourBalanceElement = document.getElementById("honour-balance");
-	  honourBalanceElement.innerHTML=honourBalance;
-   }
+  if(honourBalance==0){
+    document.getElementById("mission1progress").value = clickBalance;
+    if(clickBalance>=100){
+      honourBalance=1;
+	}
+	save();
+  }
+  if(honourBalance>0){
+	document.getElementById("mission1progress").style="display:none";
+	document.getElementById("honour-balanceRow").style="";
+  } else {
+	  document.getElementById("mission1progress").style="";
+	  document.getElementById("honour-balanceRow").style="display:none";
+  }
+  updateBalance();
 }
 function resetProgress() {
 	clickBalance = 0;
 	honourBalance = 0;
+	save();
 	updateBalance();
 	updateMissionStatus();
+}
+function save() {
+	localStorage["clickBalance"] = clickBalance;
+	localStorage["honourBalance"] = honourBalance;
 }
