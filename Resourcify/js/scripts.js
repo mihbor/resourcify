@@ -17,7 +17,10 @@ function updateMissionStatus() {
 	 mission1progressElement.value = clickBalance;
 	 if(clickBalance>=100){
 		 honourBalance+=1;
+		 var honourBalanceElement = document.getElementById("honour-balance");
+		 honourBalanceElement.innerHTML=honourBalance;
 		 mission1progressElement.style="display:none";
+		 document.getElementById("honour-balanceRow").style="";
 	 }
    }
 }

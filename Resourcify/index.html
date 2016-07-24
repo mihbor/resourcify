@@ -6,14 +6,19 @@
   </head>
   <body>
 	<h1>Resourcify!</h1>
-	<table>
-	  <caption>Treasury:</caption>
+	<table style="text-align:left">
+	  <tr id="honour-balanceRow" style="display: none">
+		<th>honour:</th>
+		<td id="honour-balance"></td>
+	  </tr>
 	  <tr>
 		<th>clicks:</th>
 		<td id="click-balance"></td>
 	  </tr>
 	</table>
-	<button style="width: 800px" onclick="clicked()">Click me</button>
+	<button style="width: 800px" onclick="clicked()">
+	  Click me
+	</button>
 	<br/>
 	<button style="width: 800px">
 	  Mission: Tutorial #1: Gather 100 clicks
