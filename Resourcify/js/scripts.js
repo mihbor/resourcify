@@ -17,7 +17,7 @@ function updateBalance(){
 	document.getElementById("click-balance").innerHTML = clickBalance;
 	document.getElementById("clock-balance").innerHTML = clockBalance;
 	document.getElementById("honour-balance").innerHTML = honourBalance;
-	if(honourBalance>=0){
+	if(honourBalance>0){
 		document.getElementById("clock").style="";
 	}else{
 		document.getElementById("clock").style="display:none";
@@ -36,10 +36,10 @@ function updateMissionStatus() {
 	save();
   }
   if(honourBalance>0){
-	document.getElementById("mission1progress").style="display:none";
+	document.getElementById("mission1").style="display:none";
 	document.getElementById("honour-balanceRow").style="";
   } else {
-	document.getElementById("mission1progress").style="";
+	document.getElementById("mission1").style="";
     document.getElementById("honour-balanceRow").style="display:none";
   }
   updateBalance();
