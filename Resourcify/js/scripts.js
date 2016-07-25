@@ -13,6 +13,9 @@ function clicked() {
 function updateBalance(){
 	document.getElementById("click-balance").innerHTML = clickBalance;
 	document.getElementById("honour-balance").innerHTML=honourBalance;
+	if(clickBalance!=0 || honourBalance!=0) {
+		document.getElementById("reset-progress").disabled="";
+	}
 }
 
 function updateMissionStatus() {
@@ -38,6 +41,7 @@ function resetProgress() {
 	save();
 	updateBalance();
 	updateMissionStatus();
+	document.getElementById("reset-progress").disabled="disabled";
 }
 function save() {
 	localStorage["clickBalance"] = clickBalance;
