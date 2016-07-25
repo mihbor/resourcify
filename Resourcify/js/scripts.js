@@ -1,6 +1,9 @@
 var clickBalance = 0;
 if(localStorage["clickBalance"]) clickBalance = parseInt(localStorage["clickBalance"]);
 
+var clockBalance = 0;
+if(localStorage["clockBalance"]) clockBalance = parseInt(localStorage["clockBalance"]);
+
 var honourBalance = 0;
 if(localStorage["honourBalance"]) honourBalance = parseInt(localStorage["honourBalance"]);
 
