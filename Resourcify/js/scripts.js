@@ -22,6 +22,16 @@ function updateBalance(){
 	}else{
 		document.getElementById("clock").style="display:none";
 	}
+	if(honourBalance>0){
+	  document.getElementById("honour-balanceRow").style="";
+    } else {
+      document.getElementById("honour-balanceRow").style="display:none";
+    }
+	if(clockBalance>0){
+	  document.getElementById("clock-balanceRow").style="";
+    } else {
+      document.getElementById("clock-balanceRow").style="display:none";
+    }
 	if(clickBalance!=0 || honourBalance!=0 || clockBalance!=0) {
 		document.getElementById("reset-progress").disabled="";
 	}
@@ -37,10 +47,8 @@ function updateMissionStatus() {
   }
   if(honourBalance>0){
 	document.getElementById("mission1").style="display:none";
-	document.getElementById("honour-balanceRow").style="";
   } else {
 	document.getElementById("mission1").style="";
-    document.getElementById("honour-balanceRow").style="display:none";
   }
   updateBalance();
 }
@@ -56,4 +64,19 @@ function save() {
 	localStorage["clickBalance"] = clickBalance;
 	localStorage["clockBalance"] = clockBalance;
 	localStorage["honourBalance"] = honourBalance;
+}
+function moveClock() {
+    var elem = document.getElementById("clock1progress");
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (elem.value >= 100) {
+            clearInterval(id);
+			clockBalance+=1;
+			save();
+			updateBalance();
+			elem.value=0;
+        } else {
+            elem.value+=10;
+        }
+    }
 }
