@@ -17,6 +17,11 @@ function updateBalance(){
 	document.getElementById("click-balance").innerHTML = clickBalance;
 	document.getElementById("clock-balance").innerHTML = clockBalance;
 	document.getElementById("honour-balance").innerHTML = honourBalance;
+	if(honourBalance>=0){
+		document.getElementById("clock").style="";
+	}else{
+		document.getElementById("clock").style="display:none";
+	}
 	if(clickBalance!=0 || honourBalance!=0 || clockBalance!=0) {
 		document.getElementById("reset-progress").disabled="";
 	}
