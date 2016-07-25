@@ -15,6 +15,10 @@
 		<th>clicks:</th>
 		<td id="click-balance"></td>
 	  </tr>
+	  <tr id="clock-balanceRow" style="display: none">
+		<th>clocks:</th>
+		<td id="clock-balance"></td>
+	  </tr>
 	</table>
 	<button onclick="clicked()">
 	  Click me
@@ -32,7 +36,6 @@
 	  </progress>
 	</button>
 	<script>
-	  document.getElementById("click-balance").innerHTML=clickBalance;
 	  updateMissionStatus();
 	</script>
 	<button disabled="disabled" style="width: 800px" id="reset-progress" onclick="resetProgress()">Reset ALL Progress</button>
