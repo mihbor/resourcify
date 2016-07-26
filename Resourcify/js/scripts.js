@@ -18,9 +18,9 @@ function updateBalance(){
 	document.getElementById("clock-balance").innerHTML = clockBalance;
 	document.getElementById("honour-balance").innerHTML = honourBalance;
 	if(honourBalance>0){
-		document.getElementById("clock").style="";
+		document.getElementById("clock1").style="";
 	}else{
-		document.getElementById("clock").style="display:none";
+		document.getElementById("clock1").style="display:none";
 	}
 	if(honourBalance>0){
 	  document.getElementById("honour-balanceRow").style="";
@@ -68,6 +68,7 @@ function save() {
 function moveClock() {
     var elem = document.getElementById("clock1progress");
     var id = setInterval(frame, 50);
+	document.getElementById("clock1").disabled="disabled";
     function frame() {
         if (elem.value >= 100) {
             clearInterval(id);
@@ -75,6 +76,7 @@ function moveClock() {
 			save();
 			updateBalance();
 			elem.value=0;
+			document.getElementById("clock1").disabled="";
         } else {
             elem.value+=5;
         }
