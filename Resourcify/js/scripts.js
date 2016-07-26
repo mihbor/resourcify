@@ -39,8 +39,8 @@ function updateBalance(){
 
 function updateMissionStatus() {
   if(honourBalance==0){
-    document.getElementById("mission1progress").value = clickBalance;
-    if(clickBalance>=100){
+    document.getElementById("mission1progress").value = clickBalance*2;
+    if(clickBalance>=50){
       honourBalance=1;
 	}
 	save();
@@ -67,7 +67,7 @@ function save() {
 }
 function moveClock() {
     var elem = document.getElementById("clock1progress");
-    var id = setInterval(frame, 10);
+    var id = setInterval(frame, 50);
     function frame() {
         if (elem.value >= 100) {
             clearInterval(id);
@@ -76,7 +76,7 @@ function moveClock() {
 			updateBalance();
 			elem.value=0;
         } else {
-            elem.value+=10;
+            elem.value+=5;
         }
     }
 }
